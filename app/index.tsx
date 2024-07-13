@@ -46,39 +46,20 @@ function ListEmptyComponent() {
   const height = dimensions.height - headerHeight - insets.bottom - insets.top;
 
   return (
-    <View className="gap-2">
-      <Text variant="largeTitle" className="text-center">
-        Large Title
+    <View style={{ height }} className="flex-1 items-center justify-center gap-1 px-12">
+      <Icon name="file-plus-outline" size={42} color={colors.grey} />
+      <Text variant="title3" className="pb-1 text-center font-semibold">
+        No Components Installed
       </Text>
-      <Text variant="title1" className="text-center">
-        Title 1
-      </Text>
-      <Text variant="title2" className="text-center">
-        Title 2
-      </Text>
-      <Text variant="title3" className="text-center">
-        Title 3
-      </Text>
-      <Text variant="heading" className="text-center">
-        Heading
-      </Text>
-      <Text variant="body" className="text-center">
-        Body
-      </Text>
-      <Text variant="callout" className="text-center">
-        Callout
-      </Text>
-      <Text variant="subhead" className="text-center">
-        Subhead
-      </Text>
-      <Text variant="footnote" className="text-center">
-        Footnote
-      </Text>
-      <Text variant="caption1" className="text-center">
-        Caption 1
-      </Text>
-      <Text variant="caption2" className="text-center">
-        Caption 2
+      <Text color="tertiary" variant="subhead" className="pb-4 text-center">
+        You can install any of the free components from the{' '}
+        <Text
+          onPress={() => Linking.openURL('https://nativewindui.com')}
+          variant="subhead"
+          className="text-primary">
+          NativeWindUI
+        </Text>
+        {' website.'}
       </Text>
     </View>
   );
@@ -115,14 +96,46 @@ function Card({ children, title }: { children: React.ReactNode; title: string })
 
 const COMPONENTS: ComponentItem[] = [
   // ADD ANY ADDITIONAL COMPONENTS HERE
-  // {
-  //   name: 'Component Name',
-  //   component: function ComponentNameExample() {
-  //     return (
-  //       <View>
-  //         <Text>Component Example</Text>
-  //       </View>
-  //     );
-  //   },
-  // },
+  {
+    name: 'Text',
+    component: function ComponentNameExample() {
+      return (
+        <View className="gap-2">
+          <Text variant="largeTitle" className="text-center">
+            Large Title
+          </Text>
+          <Text variant="title1" className="text-center">
+            Title 1
+          </Text>
+          <Text variant="title2" className="text-center">
+            Title 2
+          </Text>
+          <Text variant="title3" className="text-center">
+            Title 3
+          </Text>
+          <Text variant="heading" className="text-center">
+            Heading
+          </Text>
+          <Text variant="body" className="text-center">
+            Body
+          </Text>
+          <Text variant="callout" className="text-center">
+            Callout
+          </Text>
+          <Text variant="subhead" className="text-center">
+            Subhead
+          </Text>
+          <Text variant="footnote" className="text-center">
+            Footnote
+          </Text>
+          <Text variant="caption1" className="text-center">
+            Caption 1
+          </Text>
+          <Text variant="caption2" className="text-center">
+            Caption 2
+          </Text>
+        </View>
+      );
+    },
+  },
 ];
